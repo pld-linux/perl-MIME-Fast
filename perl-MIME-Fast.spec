@@ -5,12 +5,13 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	MIME
 %define	pnam	Fast
-Summary:	Parsing MIME messages (wrapper for C gmime library)
-Summary(pl):	Parsowanie wiadomo¶ci MIME (interfejs do biblioteki gmime)
+Summary:	MIME::Fast - parsing MIME messages (wrapper for C gmime library)
+Summary(pl):	MIME::Fast - przetwarzanie wiadomo¶ci MIME (interfejs do biblioteki gmime)
 Name:		perl-MIME-Fast
 Version:	1.4
 Release:	1
-License:	GPL
+# same as perl or GPL v2
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	ae477eeeb5d6c198d221ae9205a3be22
