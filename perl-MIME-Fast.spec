@@ -11,7 +11,7 @@ Name:		perl-MIME-Fast
 Version:	1.4
 Release:	1
 # same as perl or GPL v2
-License:	GPL or Artistic
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	ae477eeeb5d6c198d221ae9205a3be22
