@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	MIME
-%define	pnam	Fast
+%define		pdir	MIME
+%define		pnam	Fast
 Summary:	MIME::Fast - parsing MIME messages (wrapper for C gmime library)
 Summary(pl):	MIME::Fast - przetwarzanie wiadomo¶ci MIME (interfejs do biblioteki gmime)
 Name:		perl-MIME-Fast
