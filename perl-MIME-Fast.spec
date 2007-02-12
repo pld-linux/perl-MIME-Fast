@@ -6,7 +6,7 @@
 %define		pdir	MIME
 %define		pnam	Fast
 Summary:	MIME::Fast - parsing MIME messages (wrapper for C gmime library)
-Summary(pl):	MIME::Fast - przetwarzanie wiadomo∂ci MIME (interfejs do biblioteki gmime)
+Summary(pl.UTF-8):   MIME::Fast - przetwarzanie wiadomo≈õci MIME (interfejs do biblioteki gmime)
 Name:		perl-MIME-Fast
 Version:	1.6
 Release:	1
@@ -34,13 +34,13 @@ should use less memory and CPU resources than standard MIME (perl
 module), because MIME::Fast is the wrapper for C functions (calling
 C function is much, much less expensive than calling perl function).
 
-%description -l pl
-MIME::Fast to modu≥ Perla do tworzenia, edycji i analizy wiadomo∂ci
-MIME. Ten modu≥ jest oparty na bardzo dobrej bibliotece C o nazwie
-gmime (aktualnie rozwijanej). MIME::Fast powinien byÊ szybszy i uøywaÊ
-mniej pamiÍci oraz zasobÛw procesora niø standardowy modu≥ Perla MIME,
-poniewaø jest interfejsem do funkcji w C (wywo≥anie funkcji C jest
-duøo, duøo mniej kosztowne niø wywo≥anie funkcji perlowej).
+%description -l pl.UTF-8
+MIME::Fast to modu≈Ç Perla do tworzenia, edycji i analizy wiadomo≈õci
+MIME. Ten modu≈Ç jest oparty na bardzo dobrej bibliotece C o nazwie
+gmime (aktualnie rozwijanej). MIME::Fast powinien byƒá szybszy i u≈ºywaƒá
+mniej pamiƒôci oraz zasob√≥w procesora ni≈º standardowy modu≈Ç Perla MIME,
+poniewa≈º jest interfejsem do funkcji w C (wywo≈Çanie funkcji C jest
+du≈ºo, du≈ºo mniej kosztowne ni≈º wywo≈Çanie funkcji perlowej).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
