@@ -6,7 +6,7 @@
 %define		pdir	MIME
 %define		pnam	Fast
 Summary:	MIME::Fast - parsing MIME messages (wrapper for C gmime library)
-Summary(pl.UTF-8):   MIME::Fast - przetwarzanie wiadomości MIME (interfejs do biblioteki gmime)
+Summary(pl.UTF-8):	MIME::Fast - przetwarzanie wiadomości MIME (interfejs do biblioteki gmime)
 Name:		perl-MIME-Fast
 Version:	1.6
 Release:	1
