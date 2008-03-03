@@ -9,12 +9,13 @@ Summary:	MIME::Fast - parsing MIME messages (wrapper for C gmime library)
 Summary(pl.UTF-8):	MIME::Fast - przetwarzanie wiadomości MIME (interfejs do biblioteki gmime)
 Name:		perl-MIME-Fast
 Version:	1.6
-Release:	1
+Release:	2
 # same as perl or GPL v2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3c6466c7645bed52ae6bbce9705e3814
+Patch0:		%{name}-gmime.patch
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 # Can't test with earlier versions of gmime-2
@@ -44,6 +45,7 @@ dużo, dużo mniej kosztowne niż wywołanie funkcji perlowej).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
