@@ -1,0 +1,52 @@
+Index: MIME-Fast-1.6/Fast/Part.xs
+--- MIME-Fast-1.6/Fast/Part.xs.orig	2004-12-17 12:55:42 +0100
++++ MIME-Fast-1.6/Fast/Part.xs	2007-02-09 08:15:50 +0100
+@@ -48,7 +48,6 @@
+ 	XSINTERFACE_FUNC_MIMEFAST_PART_SET
+     INTERFACE:
+ 	set_content_description
+-	set_content_md5
+ 	set_content_location
+ 	set_content_disposition
+ 	set_filename
+@@ -240,6 +239,9 @@
+           g_mime_part_set_content_object(mime_part, mime_data_wrapper);
+ 
+           g_mime_stream_unref(mime_stream);
++        } else if (SvPOKp(svval)) {
++          data = (char *)SvPV(svval, len);
++          g_mime_part_set_content(mime_part, data, len);
+ 	} else if (svvaltype == SVt_PVMG) { // possible STDIN/STDOUT etc.
+           int fd0 = (int)SvIV( svval );
+ 	  int fd;
+@@ -256,9 +258,6 @@
+           g_mime_part_set_content_object(mime_part, mime_data_wrapper);
+ 
+           g_mime_stream_unref(mime_stream);
+-        } else if (SvPOK(svval)) {
+-          data = (char *)SvPV(svval, len);
+-          g_mime_part_set_content(mime_part, data, len);
+         } else {
+           croak("mime_set_content: Unknown type: %d", (int)svvaltype);
+         }
+Index: MIME-Fast-1.6/gmime-stream-perlio.h
+--- MIME-Fast-1.6/gmime-stream-perlio.h.orig	2004-12-16 21:28:51 +0100
++++ MIME-Fast-1.6/gmime-stream-perlio.h	2007-02-09 08:15:50 +0100
+@@ -36,11 +36,11 @@
+ #include <gmime/gmime-stream.h>
+ 
+ #define GMIME_TYPE_STREAM_PERLIO            (g_mime_stream_perlio_get_type ())
+-#define GMIME_STREAM_PERLIO(obj)            (GMIME_CHECK_CAST ((obj), GMIME_TYPE_STREAM_PERLIO, GMimeStreamPerlIO))
+-#define GMIME_STREAM_PERLIO_CLASS(klass)    (GMIME_CHECK_CLASS_CAST ((klass), GMIME_TYPE_STREAM_PERLIO, GMimeStreamPerlIOClass))
+-#define GMIME_IS_STREAM_PERLIO(obj)         (GMIME_CHECK_TYPE ((obj), GMIME_TYPE_STREAM_PERLIO))
+-#define GMIME_IS_STREAM_PERLIO_CLASS(klass) (GMIME_CHECK_CLASS_TYPE ((klass), GMIME_TYPE_STREAM_PERLIO))
+-#define GMIME_STREAM_PERLIO_GET_CLASS(obj)  (GMIME_CHECK_GET_CLASS ((obj), GMIME_TYPE_STREAM_PERLIO, GMimeStreamPerlIOClass))
++#define GMIME_STREAM_PERLIO(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GMIME_TYPE_STREAM_PERLIO, GMimeStreamPerlIO))
++#define GMIME_STREAM_PERLIO_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), GMIME_TYPE_STREAM_PERLIO, GMimeStreamPerlIOClass))
++#define GMIME_IS_STREAM_PERLIO(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GMIME_TYPE_STREAM_PERLIO))
++#define GMIME_IS_STREAM_PERLIO_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GMIME_TYPE_STREAM_PERLIO))
++#define GMIME_STREAM_PERLIO_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GMIME_TYPE_STREAM_PERLIO, GMimeStreamPerlIOClass))
+ 
+ typedef struct _GMimeStreamPerlIO GMimeStreamPerlIO;
+ typedef struct _GMimeStreamPerlIOClass GMimeStreamPerlIOClass;
+
