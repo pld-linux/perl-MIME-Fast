@@ -13,9 +13,10 @@ Release:	2
 # same as perl or GPL v2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/MIME/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3c6466c7645bed52ae6bbce9705e3814
 Patch0:		%{name}-gmime.patch
+URL:		http://search.cpan.org/dist/MIME-Fast/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 # Can't test with earlier versions of gmime-2
