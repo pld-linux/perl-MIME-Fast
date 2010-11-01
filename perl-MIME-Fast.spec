@@ -9,7 +9,7 @@ Summary:	MIME::Fast - parsing MIME messages (wrapper for C gmime library)
 Summary(pl.UTF-8):	MIME::Fast - przetwarzanie wiadomości MIME (interfejs do biblioteki gmime)
 Name:		perl-MIME-Fast
 Version:	1.6
-Release:	3
+Release:	4
 # same as perl or GPL v2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
